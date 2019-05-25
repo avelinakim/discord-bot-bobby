@@ -1,0 +1,15 @@
+{
+  "name": "bobby-b-bot",
+  "version": "1.0.0",
+  "description": "Baratheon first of his name's subconciousness uploaded into this bot after he was given something for the pain and let die.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &&exit 1"
+  },
+  "keywords": [],
+  "author": "Avelina Kim",
+  "dependencies": {
+    "discord.js": "^11.5.0"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,5 @@
+{
+  "env": {
+    "DISCORD_TOKEN": "@discord-token"
+  }
+}

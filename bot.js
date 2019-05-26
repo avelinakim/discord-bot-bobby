@@ -28,6 +28,8 @@ client.on("message", async message => {
     if (message.author.id === '81532687680016384') stevenToday = true;
     let index = Math.floor(Math.random() * unusedQuotes.length);
     message.channel.send(unusedQuotes[index].toUpperCase());
+    console.log('Sending message')
+    console.log(unusedQuotes[index].toUpperCase())
     unusedQuotes = unusedQuotes.slice(0, index).concat(unusedQuotes.slice(index + 1));
     if (unusedQuotes.length <= quotes.length / 2) unusedQuotes = [...quotes];
   }

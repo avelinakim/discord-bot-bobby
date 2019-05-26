@@ -21,16 +21,24 @@ client.on("message", async message => {
   // Bot will ignore itself and other bots
   if (message.author.bot) return;
 
-  // Generates random and send quote if message mentions @bobby 
-  if (message.mentions.members.has(client.user.id)) {
-
+  // Generates random and sends quote if message mentions @bobby (or author is steven once a day)
+  // Steven Id: 81532687680016384
+  if (message.mentions.members.has(client.user.id) || (message.author.id === '81532687680016384' && !stevenToday)) {
+    if (message.author.id === '81532687680016384') stevenToday = true;
     let index = Math.floor(Math.random() * unusedQuotes.length);
-    message.channel.send(unusedQuotes[index].toUpperCase() + "index: " + index);
+    message.channel.send(unusedQuotes[index].toUpperCase());
     unusedQuotes = unusedQuotes.slice(0, index).concat(unusedQuotes.slice(index + 1));
     if (unusedQuotes.length <= quotes.length / 2) unusedQuotes = [...quotes];
-    console.log("Length: " + unusedQuotes.length);
   }
 });
+
+// Reset Steven variable every morning
+setInterval(() => {
+  console.log("In interval");
+  if (new Date().getHours() === 0) {
+    stevenToday = false;
+  }
+}, 3600000);
 
 client.on('error', console.error);
 client.login(process.env.DISCORD_TOKEN);

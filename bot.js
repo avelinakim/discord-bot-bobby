@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const quotes = require('./quotes.json');
@@ -32,5 +33,4 @@ client.on("message", async message => {
 });
 
 client.on('error', console.error);
-console.log(process.env.DISCORD_TOKEN)
 client.login(process.env.DISCORD_TOKEN);

@@ -4,12 +4,18 @@
   "description": "Baratheon first of his name's subconciousness uploaded into this bot after he was given something for the pain and let die.",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" &&exit 1"
+    "start": "node bot.js",
+    "deploy": "echo 'NOT WORKING YET'"
+  },
+  "engine": {
+    "node": "8.x",
+    "npm": "*"
   },
   "keywords": [],
   "author": "Avelina Kim",
   "dependencies": {
-    "discord.js": "^11.5.0"
+    "discord.js": "^11.5.0",
+    "dotenv": "^8.0.0"
   },
   "license": "ISC"
 }

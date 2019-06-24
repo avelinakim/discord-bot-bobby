@@ -24,7 +24,8 @@ client.on("message", async message => {
 
   // Generates random and sends quote if message mentions @bobby (or author is steven once a day)
   // Steven Id: 81532687680016384
-  if ((message.mentions.members && message.mentions.members.has(client.user.id)) || (message.author.id === '81532687680016384' && !stevenToday)) {
+  if ((message.mentions.members && message.mentions.members.has(client.user.id))) {
+    // || (message.author.id === '81532687680016384' && !stevenToday)) {
     if (message.author.id === '81532687680016384') stevenToday = true;
     let index = Math.floor(Math.random() * unusedQuotes.length);
     message.channel.send(unusedQuotes[index].toUpperCase());
